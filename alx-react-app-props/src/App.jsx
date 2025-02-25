@@ -8,7 +8,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import UserProfile from './components/UserProfile'
 import UserContext from './components/UserContext.js'
-import ProfilePage from './ProfilePage';
+import ProfilePage from './components/ProfilePage.jsx';
 
 function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
