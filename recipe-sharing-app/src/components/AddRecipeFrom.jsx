@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import useRecipeStore from './RecipeStore';
 
-const AddRecipeForm = () => {
+let AddRecipeForm = () => {
   const addRecipe = useRecipeStore((state) => state.addRecipe);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
