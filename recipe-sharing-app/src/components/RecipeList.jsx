@@ -1,5 +1,5 @@
 
-import useRecipeStore from './fng';
+import useRecipeStore from './RecipeStore.js';
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
