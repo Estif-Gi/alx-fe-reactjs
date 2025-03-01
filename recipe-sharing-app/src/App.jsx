@@ -21,7 +21,7 @@ function App() {
       </div>
     </Router>
     {/* <RecipeList /> */}
-    <DeleteRecipeButton/>
+   
       {/* <div>
 
       <h1>Recipe Sharing App</h1>
