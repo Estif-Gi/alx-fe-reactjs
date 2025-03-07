@@ -23,13 +23,13 @@ let AddRecipeForm = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
-        required
+        required={true}
       />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
-        required
+        required={true}
       />
       <button type="submit">Add Recipe</button>
     </form>
