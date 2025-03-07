@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
-import PostsComponent from "./component/PostsComponent"
+import PostsComponent from "./components/PostsComponent"
 const queryClient = new QueryClient();
 function App() {
 
