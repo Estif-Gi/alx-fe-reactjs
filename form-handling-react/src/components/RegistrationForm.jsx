@@ -38,7 +38,6 @@ function RegistrationForm() {
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
       setSubmitted(true);
-      // Here you would send data to the mock API
       console.log("Form Submitted:", username , email , password);
     } else {
       setErrors(validationErrors);
