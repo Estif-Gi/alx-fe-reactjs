@@ -7,14 +7,14 @@ const fetchData = async ()=>{
 };
     
 const PostsComponent = () => {
-    const { data ,error ,isLoading } = useQuery('fetchData', fetchData);
+    const { fetchPosts ,isError ,isLoading } = useQuery('fetchData', fetchData);
 
     if(isLoading) return <div>Loading...</div>;
-    if(error) return <div>An Error Has Occurred</div>
+    if(isError) return <div>An Error Has Occurred</div>
     
     return ( 
         <div>
-            {data.map(item=>(<div key={item.id}></div>))}
+            {fetchPosts.map(item=>(<div key={item.id}></div>))}
         </div>
      );
 }
