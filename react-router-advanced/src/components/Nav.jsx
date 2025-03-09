@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import Profile from "./bach"
+import Profile from "./profile";
 import UserProfile from "./UserProfile"
 
 
