@@ -22,7 +22,7 @@ const Nav = () => {
                     
                 </ul>
             </nav>
-                    <button style={{position:'absolute', left:'300px'}}><Link to="/logIn">Log In</Link></button>
+                    <button style={{position:'absolute', left:'300px'}}><Link to="/logIn">To Log In</Link></button>
         </div>
      );
 }
