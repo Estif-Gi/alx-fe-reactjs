@@ -1,6 +1,4 @@
 import {Link} from "react-router-dom"
-import Profile from "./profile";
-import UserProfile from "./UserProfile"
 
 
 const Nav = () => {
