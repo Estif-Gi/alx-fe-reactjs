@@ -19,9 +19,12 @@ const Nav = () => {
                     <li><Link to="/About">About</Link></li>
                     <li><Link to="/Profile">Profile</Link></li>
                     <li><Link to="/users/:userId">userProfile</Link></li>
+                    <li><Link to="/blog/:id">user blog</Link></li>
+                    <li><Link to="/blog">Blogs</Link></li>
+                    
                 </ul>
             </nav>
-                    <button><Link to="/logIn">Log In</Link></button>
+                    <button style={{position:'absolute', left:'300px'}}><Link to="/logIn">Log In</Link></button>
         </div>
      );
 }

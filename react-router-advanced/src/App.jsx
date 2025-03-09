@@ -8,7 +8,8 @@ import UserProfile from "./components/UserProfile"
 import Profile from "./components/Profile"
 import Login from "./components/Login"
 import { AuthProvider } from "./components/AuthContext"
-
+import BlogPost from "./components/BlogPost";
+import Blog from "./components/Blog"
 function App() {
 
   return (
@@ -16,7 +17,9 @@ function App() {
       <AuthProvider>
       <Nav/>
       <Routes>
+        <Route path="/blog/:id" element={<BlogPost />} /> 
         <Route path="/" element={<Home/>}/>
+        <Route path="/blog" element={<Blog />} />
         <Route path="/users/:userId" element={<UserProfile />} />
         <Route path="/About" element={<About/>}/>
         <Route path="/Login" element={<Login/>}/>
