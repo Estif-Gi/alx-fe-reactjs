@@ -5,7 +5,7 @@ import Nav from "./components/Nav"
 import Dashboard from "./components/Dashboard"
 import ProtectedRoute from "./components/ProtectedRoute"
 import UserProfile from "./components/UserProfile"
-import Profile from "./components/Profile"
+import Profile from "./components/profile"
 import Login from "./components/Login"
 import { AuthProvider } from "./components/AuthContext"
 import BlogPost from "./components/BlogPost";
