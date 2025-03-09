@@ -7,11 +7,13 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import UserProfile from "./components/UserProfile"
 import Profile from "./components/Profile"
 import Login from "./components/Login"
+import { AuthProvider } from "./components/AuthContext"
 
 function App() {
 
   return (
     <Router>
+      <AuthProvider>
       <Nav/>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -25,6 +27,7 @@ function App() {
             </ProtectedRoute>
           }/>
       </Routes>
+      </AuthProvider>
     </Router>
   )
 }
