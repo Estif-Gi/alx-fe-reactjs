@@ -15,7 +15,7 @@ const Nav = () => {
                 <ul style={{listStyle: "none",display:'flex',gap:'20px', textDecoration:'none'}}>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/About">About</Link></li>
-                    <li><Link to="/Profile">Profile</Link></li>
+                    <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/users/:userId">userProfile</Link></li>
                     <li><Link to="/blog/:id">user blog</Link></li>
                     <li><Link to="/blog">Blogs</Link></li>
