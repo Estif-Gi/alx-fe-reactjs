@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
      "./public/index.html",
   ],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false,
   theme: {
     extend: {},
