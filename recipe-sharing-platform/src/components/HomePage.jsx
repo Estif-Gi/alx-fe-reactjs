@@ -6,7 +6,7 @@ useEffect(()=>{
     setRecipes(data);
 },[]);
     return(
-        <div className=" grid grid-cols-2 grid-rows-2">
+        <div className=" grid grid-cols-1 grid-rows-2">
             {recipes.map(item =>(
             
                 <div className=" transition ease-in duration-200 m-6 bg-gray-200 hover:bg-gray-100 shadow-md rounded-md  w-auto ml-4 mt-3 p-2" key={item.id}>
