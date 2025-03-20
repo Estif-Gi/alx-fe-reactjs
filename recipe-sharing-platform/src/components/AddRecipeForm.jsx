@@ -1,66 +1,89 @@
-import {Formik , Field, Form , ErrorMessage } from 'formik'
-import { useState } from 'react';
-import * as Yup from 'yup'
+import { useState } from "react";
 
-const validationSchema = Yup.object({
-    title:Yup.string().required("Food Name is required"),
-    summary:Yup.string().required("Add your thoughts about the food"),
-    ingredients:Yup.string().required('How to mack the food'),
-    instructions:Yup.string().required('At minimum the food should contain 2 steps')
-})
+const AddRecipeForm = () => {
+  const [title, setTitle] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [steps, setSteps] = useState("");
+  const [error, setError] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const  AddRecipeForm = () => {
-    const [submit , setSubmit] = useState(false);
-    const [items , setItems ] = useState([]);
-    const [input, setInput] = useState("");
-    
-    function handleSubmit() {
-        setItems(Input.split(',').map(item=>item.trim()))
-
-
+    // Validation
+    if (!title || !ingredients || !steps) {
+      setError("All fields are required!");
+      return;
     }
-    return ( 
-        <div className="relative ">
-            <Formik className="" initialValues={{
-                title:'',
-                summary:'',
-                ingredients:'',
-                instruction:'',
 
-            }} 
-            validationSchema={validationSchema}
-            onSubmit={(values)=>{
-                setSubmit(true);
-                console.log("Form Submitted:", values);
-            }}
-            >
-                {()=>(
-                    <Form className="flex flex-col">
-                        <Field type="text" placeholder="Food Name" name="title" className="border-2 border-gray-400 rounded-lg pl-2 m-4 w-64 shadow-md" required/> 
-                        <ErrorMessage name="title" component="p"/>
+    const ingredientsArray = ingredients.split(",").map((item) => item.trim());
+    const stepsArray = steps.split(".").map((step) => step.trim());
 
-                        <Field type="text" placeholder="Food description" name="summary" className="border-2 border-gray-400 rounded-lg pl-2 w-64 pb-4 m-4 shadow-md" required/> 
-                        <ErrorMessage name="summary" component="p"/>
-                       
-                        <Field type="text" placeholder="Ingredients" name="ingredients" className="border-2 border-gray-400 rounded-lg pl-3 pt-3 m-4 pb-24 w-72 shadow-2xl" required/> 
-                        <ErrorMessage name="ingredients" component="p"/>
-                       
-                        <Field type="text" onChange={(e)=>setInput(e.target.value)} onSubmit={handleSubmit}name="instructions" className="border-2 border-gray-400 rounded-lg pl-3 pt-3 m-4 pb-24 w-72 shadow-2xl" required/> 
-                        <ErrorMessage name="instructions" component="p"/>
+    if (ingredientsArray.length < 2) {
+      setError("Please enter at least two ingredients.");
+      return;
+    }
 
-                        <button className="absolute bottom-40 left-80 border-red-500 border-2 rounded-xl p-2 hover:text-white hover:bg-red-500" type="submit">Add Recipe</button>
-                        {submit && <p className="text-center text-xl text-red-500 font-semibold">new food item added</p>}
-                    </Form>
+    const newRecipe = {
+      id: Date.now(),
+      title,
+      ingredients: ingredientsArray,
+      steps: stepsArray,
+    };
 
-                )}
+    console.log("Recipe Submitted:", newRecipe);
 
+    setTitle("");
+    setIngredients("");
+    setSteps("");
+    setError("");
+  };
 
-           
-           
-            </Formik>
+  return (
+    <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+      <h2 className="text-2xl font-bold mb-4 text-gray-800">Add a New Recipe</h2>
+
+      {error && <p className="text-red-500 mb-4">{error}</p>}
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-gray-700 font-semibold">Recipe Title</label>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter recipe title"
+          />
         </div>
-     );
-}
- 
-export default AddRecipeForm ;
+
+        <div>
+          <label className="block text-gray-700 font-semibold">Ingredients (comma-separated)</label>
+          <textarea
+            value={ingredients}
+            onChange={(e) => setIngredients(e.target.value)}
+            className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500"
+            rows="3"
+            placeholder="Example: Tomato, Onion, Garlic, Olive oil"
+          />
+        </div>
+
+        <div>
+          <label className="block text-gray-700 font-semibold">Preparation Steps (separate with periods)</label>
+          <textarea
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
+            className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500"
+            rows="4"
+            placeholder="Example: Chop vegetables. Cook for 10 minutes. Serve hot."
+          />
+        </div>
+
+        <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600">
+          Add Recipe
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default AddRecipeForm;
