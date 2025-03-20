@@ -4,30 +4,43 @@ const AddRecipeForm = () => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!title.trim()) newErrors.title = "Recipe title is required.";
+    if (!ingredients.trim()) {
+      newErrors.ingredients = "Please enter at least two ingredients.";
+    } else {
+      const ingredientsArray = ingredients.split(",").map((item) => item.trim());
+      if (ingredientsArray.length < 2) {
+        newErrors.ingredients = "At least two ingredients are required.";
+      }
+    }
+
+    if (!steps.trim()) {
+      newErrors.steps = "Please enter preparation steps.";
+    } else {
+      const stepsArray = steps.split(".").map((step) => step.trim());
+      if (stepsArray.length < 2) {
+        newErrors.steps = "At least two preparation steps are required.";
+      }
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validation
-    if (!title || !ingredients || !steps) {
-      setError("All fields are required!");
-      return;
-    }
-
-    const ingredientsArray = ingredients.split(",").map((item) => item.trim());
-    const stepsArray = steps.split(".").map((step) => step.trim());
-
-    if (ingredientsArray.length < 2) {
-      setError("Please enter at least two ingredients.");
-      return;
-    }
+    if (!validate()) return; 
 
     const newRecipe = {
       id: Date.now(),
       title,
-      ingredients: ingredientsArray,
-      steps: stepsArray,
+      ingredients: ingredients.split(",").map((item) => item.trim()),
+      steps: steps.split(".").map((step) => step.trim()),
     };
 
     console.log("Recipe Submitted:", newRecipe);
@@ -35,14 +48,12 @@ const AddRecipeForm = () => {
     setTitle("");
     setIngredients("");
     setSteps("");
-    setError("");
+    setErrors({});
   };
 
   return (
     <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Add a New Recipe</h2>
-
-      {error && <p className="text-red-500 mb-4">{error}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -51,9 +62,12 @@ const AddRecipeForm = () => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500"
+            className={`w-full border p-2 rounded-lg focus:ring-2 focus:ring-blue-500 ${
+              errors.title ? "border-red-500" : "border-gray-300"
+            }`}
             placeholder="Enter recipe title"
           />
+          {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
         </div>
 
         <div>
@@ -61,10 +75,13 @@ const AddRecipeForm = () => {
           <textarea
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
-            className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500"
+            className={`w-full border p-2 rounded-lg focus:ring-2 focus:ring-blue-500 ${
+              errors.ingredients ? "border-red-500" : "border-gray-300"
+            }`}
             rows="3"
             placeholder="Example: Tomato, Onion, Garlic, Olive oil"
           />
+          {errors.ingredients && <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>}
         </div>
 
         <div>
@@ -72,10 +89,13 @@ const AddRecipeForm = () => {
           <textarea
             value={steps}
             onChange={(e) => setSteps(e.target.value)}
-            className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500"
+            className={`w-full border p-2 rounded-lg focus:ring-2 focus:ring-blue-500 ${
+              errors.steps ? "border-red-500" : "border-gray-300"
+            }`}
             rows="4"
             placeholder="Example: Chop vegetables. Cook for 10 minutes. Serve hot."
           />
+          {errors.steps && <p className="text-red-500 text-sm mt-1">{errors.steps}</p>}
         </div>
 
         <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600">
