@@ -15,7 +15,7 @@ const  AddRecipeForm = () => {
     const [items , setItems ] = useState([]);
     const [input, setInput] = useState("");
     
-    function handelSubmit() {
+    function handleSubmit() {
         setItems(Input.split(',').map(item=>item.trim()))
 
 
@@ -46,7 +46,7 @@ const  AddRecipeForm = () => {
                         <Field type="text" placeholder="Ingredients" name="ingredients" className="border-2 border-gray-400 rounded-lg pl-3 pt-3 m-4 pb-24 w-72 shadow-2xl" required/> 
                         <ErrorMessage name="ingredients" component="p"/>
                        
-                        <Field type="text" onChange={(e)=>setInput(e.target.value)} onSubmit={handelSubmit}name="instructions" className="border-2 border-gray-400 rounded-lg pl-3 pt-3 m-4 pb-24 w-72 shadow-2xl" required/> 
+                        <Field type="text" onChange={(e)=>setInput(e.target.value)} onSubmit={handleSubmit}name="instructions" className="border-2 border-gray-400 rounded-lg pl-3 pt-3 m-4 pb-24 w-72 shadow-2xl" required/> 
                         <ErrorMessage name="instructions" component="p"/>
 
                         <button className="absolute bottom-40 left-80 border-red-500 border-2 rounded-xl p-2 hover:text-white hover:bg-red-500" type="submit">Add Recipe</button>
