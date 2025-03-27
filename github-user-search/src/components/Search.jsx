@@ -27,8 +27,8 @@ const Search = () => {
     setPage(1);
 
     try {
-      const fetchUsersData = await fetchUsers(searchParams, 1);
-      setUsers(fetchUsersData);
+      const fetchUserData = await fetchUsers(searchParams, 1);
+      setUsers(fetchUserData);
     } catch (err) {
       setError("No users found matching your criteria");
     } finally {
@@ -68,7 +68,7 @@ const Search = () => {
           name="location"
           value={searchParams.location}
           onChange={handleChange}
-          placeholder="Location (e.g., New York)"
+          placeholder="Location (e.g.,Ethiopia)"
           className="w-full p-2 border rounded-lg"
         />
         <input
