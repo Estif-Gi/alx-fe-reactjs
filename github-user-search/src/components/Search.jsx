@@ -27,8 +27,8 @@ const Search = () => {
     setPage(1);
 
     try {
-      const data = await fetchUsers(searchParams, 1);
-      setUsers(data);
+      const fetchUsersData = await fetchUsers(searchParams, 1);
+      setUsers(fetchUsersData);
     } catch (err) {
       setError("No users found matching your criteria");
     } finally {
