@@ -45,7 +45,7 @@ const Search = () => {
       setUsers((prevUsers) => [...prevUsers, ...data]);
       setPage(nextPage);
     } catch (err) {
-      setError("Looks like we cant find the user");
+      setError("Error loading more users");
     } finally {
       setLoading(false);
     }
@@ -89,7 +89,7 @@ const Search = () => {
 
       <div className="mt-4 space-y-4">
         {users.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user.id} user={user} html_url={user.html_url} />
         ))}
       </div>
 
