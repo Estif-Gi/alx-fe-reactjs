@@ -1,5 +1,5 @@
 import { useState } from "react";
-import fetchUsers from "../services/githubService";
+import fetchUserData from "../services/githubService";
 import UserCard from "./UserCard";
 
 const Search = () => {
@@ -27,7 +27,7 @@ const Search = () => {
     setPage(1);
 
     try {
-      const fetchUserData = await fetchUsers(searchParams, 1);
+      const fetchUserData = await fetchUserData(searchParams, 1);
       setUsers(fetchUserData);
     } catch (err) {
       setError("No users found matching your criteria");
@@ -41,7 +41,7 @@ const Search = () => {
     setLoading(true);
 
     try {
-      const data = await fetchUsers(searchParams, nextPage);
+      const data = await fetchUserData(searchParams, nextPage);
       setUsers((prevUsers) => [...prevUsers, ...data]);
       setPage(nextPage);
     } catch (err) {

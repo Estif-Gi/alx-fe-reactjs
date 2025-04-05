@@ -15,7 +15,7 @@ function App() {
           <Link to="/favorites">Favorites</Link> |{' '}
           <Link to="/recommendations">Recommendations</Link>
         </nav>
-        <SearchBar /> {/* Add SearchBar */}
+        <SearchBar /> 
         <Routes>
           <Route path="/" element={<RecipeList />} />
           <Route path="/recipe/:recipeId" element={<RecipeDetails />} />

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const fetchUsers = async ({ username, location, minRepos }, page = 1) => {
+const fetchUserData = async ({ username, location, minRepos }, page = 1) => {
   let query = "";
 
   if (username) query += `${username} in:login `;
@@ -17,4 +17,4 @@ const fetchUsers = async ({ username, location, minRepos }, page = 1) => {
   }
 };
 
-export default fetchUsers;
+export default fetchUserData;
