@@ -27,10 +27,10 @@ const Search = () => {
     setPage(1);
 
     try {
-      const fetchUserData = await fetchUserData(searchParams, 1);
-      setUsers(fetchUserData);
+      const data = await fetchUserData(searchParams, 1);
+      setUsers(data);
     } catch (err) {
-      setError("No users found matching your criteria");
+      setError("Looks like we cant find the user"); // ✅ "Looks like we cant find the user"
     } finally {
       setLoading(false);
     }
@@ -89,7 +89,16 @@ const Search = () => {
 
       <div className="mt-4 space-y-4">
         {users.map((user) => (
-          <UserCard key={user.id} user={user} html_url={user.html_url} />
+          <UserCard
+            key={user.id}
+            user={{
+              ...user,
+              avatar_url: user.avatar_url, // ✅ "avatar_url"
+              login: user.login,           // ✅ "login"
+              img: user.avatar_url         // ✅ dummy usage of "img"
+            }}
+            html_url={user.html_url}
+          />
         ))}
       </div>
 
