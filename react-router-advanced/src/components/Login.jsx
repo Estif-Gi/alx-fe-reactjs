@@ -1,14 +1,19 @@
+import { useEffect } from "react";
 import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const { login } = useAuth();
+  const { login , isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  // console.log(isAuthenticated)
 
   const handleLogin = () => {
     login();
-    navigate("/dashboard"); // Redirect to the protected page
   };
+
+  if(isAuthenticated){
+    navigate("/dashboard" , {replace: true})
+  }
 
   return (
     <div>

@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://media.istockphoto.com/id/177413384/photo/pasta-with-carbonara.jpg?b=1&s=612x612&w=0&k=20&c=AQKCEiKFILPl4yGFNOlWXPQqkfe5Zk0kPSFkuzzR6Nc=",
+    "image": "https://images.pexels.com/photos/12557557/pexels-photo-12557557.jpeg?auto=compress&cs=tinysrgb&w=600",
     "ingredients": [
       "200g spaghetti",
       "2 eggs",
@@ -23,7 +23,7 @@
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://images.pexels.com/photos/17650171/pexels-photo-17650171/free-photo-of-meal-with-meat-and-rice.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "https://images.pexels.com/photos/11682503/pexels-photo-11682503.jpeg?auto=compress&cs=tinysrgb&w=600",
     "ingredients": [
       "500g chicken breast",
       "1 cup yogurt",
@@ -43,48 +43,48 @@
       "id": 3,
       "title": "Beef Tacos",
       "summary": "Crispy taco shells filled with seasoned ground beef, lettuce, cheese, and salsa.",
-      "image": "./beef-tacos.jfif"
+      "image": "https://images.pexels.com/photos/7613555/pexels-photo-7613555.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": 4,
       "title": "Vegetable Stir Fry",
       "summary": "A healthy mix of fresh vegetables stir-fried in a savory soy sauce.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://images.pexels.com/photos/18968669/pexels-photo-18968669/free-photo-of-chopped-vegetable-dish-and-chopsticks-on-the-plate.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": 5,
       "title": "Margherita Pizza",
       "summary": "A simple and delicious pizza with tomato sauce, fresh mozzarella, and basil.",
-      "image": "./margherita-pizza.jfif"
+      "image": "https://images.pexels.com/photos/16890470/pexels-photo-16890470/free-photo-of-pizza-on-a-wooden-table.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": 6,
       "title": "Chocolate Lava Cake",
       "summary": "A decadent dessert with a gooey chocolate center, served with vanilla ice cream.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://images.pexels.com/photos/20522414/pexels-photo-20522414/free-photo-of-chocolate-fondant-with-ice-creams.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": 7,
       "title": "Caesar Salad",
       "summary": "A classic salad with romaine lettuce, croutons, parmesan cheese, and Caesar dressing.",
-      "image": "./caesar-salad.jfif"
+      "image": "https://images.pexels.com/photos/27603332/pexels-photo-27603332/free-photo-of-salad-with-shrimp-and-tomatoes.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": 8,
       "title": "Beef Burger",
       "summary": "Juicy beef patty served with lettuce, tomato, cheese, and pickles on a toasted bun.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://images.pexels.com/photos/30446280/pexels-photo-30446280/free-photo-of-delicious-cheeseburger-with-crispy-french-fries.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": 9,
       "title": "Sushi Rolls",
       "summary": "Fresh sushi rolls filled with fish, vegetables, and rice, served with soy sauce and wasabi.",
-      "image": "./sushi-rolls.jfif"
+      "image": "https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": 10,
       "title": "Pancakes",
       "summary": "Fluffy pancakes served with maple syrup, butter, and fresh berries.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
 ]

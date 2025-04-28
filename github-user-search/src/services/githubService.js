@@ -6,7 +6,7 @@ const fetchUserData = async ({ username, location, minRepos }, page = 1) => {
   if (username) query += `${username} in:login `;
   if (location) query += `location:${location} `;
   if (minRepos) query += `repos:>${minRepos}`;
-
+  console.log(query)
   const API_URL = `https://api.github.com/search/users?q=${query.trim()}&page=${page}&per_page=10`;
 
   try {

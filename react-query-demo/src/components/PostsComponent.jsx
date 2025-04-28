@@ -12,7 +12,7 @@ const PostsComponent = () => {
         error,
         isLoading,
         isError,
-        refetch,} = useQuery({
+        refetch } = useQuery({
         queryKey: ["posts"],
         queryFn: fetchPosts,
         staleTime: 60000,
@@ -31,7 +31,7 @@ const PostsComponent = () => {
       <button onClick={() => refetch()}>Refetch Posts</button>
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <li key={post.id}> {post.title} </li>
         ))}
       </ul>
     </div>
