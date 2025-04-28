@@ -98,7 +98,7 @@ const AddRecipeForm = () => {
           {errors.steps && <p className="text-red-500 text-sm mt-1">{errors.steps}</p>}
         </div>
 
-        <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600">
+        <button type="submit" className="w-full bg-gray-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-600">
           Add Recipe
         </button>
       </form>

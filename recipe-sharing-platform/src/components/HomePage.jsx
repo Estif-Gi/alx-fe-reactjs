@@ -19,8 +19,8 @@ function HomePage() {
                             <div className=" grid md:grid-cols-3 sm:flex">
                             <img className=" w-44 h-40 rounded-lg hover:shadow-2xl lg:w-72 lg:h-72 md:rounded-3xl transform hover:scale-95 transition ease-in duration-100" src={item.image} alt={item.title} />
                             <div className="grid grid-cols-1">
-                            <h2 className=" text-sm sm:text-2xl font-bold text-orange-700 pl-3 lg:text-4xl md:text-center md:m-4">{item.title}</h2>
-                            <p className="text-sm sm:text-lg pl-2 text-wrap  lg:text-2xl">{item.summary}</p>
+                            <h2 className=" text-sm sm:text-xl font-bold text-orange-700 pl-3 lg:text-2xl md:text-center md:m-4">{item.title}</h2>
+                            <p className="text-sm sm:text-lg sm:pl-2 text-wrap  lg:text-2xl">{item.summary}</p>
                             </div>
                             </div>
                         </div>
