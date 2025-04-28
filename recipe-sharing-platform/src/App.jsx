@@ -5,8 +5,10 @@ import AddRecipeForm from "./components/AddRecipeForm";
 function App() {
   return (
     <Router>
+      <div className="border-2 bg-yellow-50 gap-10 flex pl-10">
+      <Link className="m-4" to='/'>Home</Link>
       <Link className="m-4" to='/Add-recipe'>Add recipe</Link>
-      <Link to='/'>Home</Link>
+      </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
