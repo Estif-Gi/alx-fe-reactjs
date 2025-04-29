@@ -1,11 +1,8 @@
 import { useState } from "react";
 
 function RegistrationForm() {
-  // const [formData, setFormData] = useState({
-  //   username: "",
-  //   email: "",
-  //   password: "",
-  // });
+  
+
   const [username , setUsername] = useState('');
   const [email , setEmail] = useState('');
   const [password , setPassword] = useState('');
@@ -45,38 +42,55 @@ function RegistrationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}
+          className=" flex flex-col justify-self-center p-6 bg-red-50 shadow-xl mt-4"
+    >
       <div>
-        <label>Username</label>
+        <label>Username:</label>
         <input
           type="text"
           name="username"
+          placeholder="Username"
           value={username}
           onChange={handleChange}
+          className="border-b-2 border-gray-400 ml-2 hover:border-gray-500 m-3"
         />
         {errors.username && <p>{errors.username}</p>}
       </div>
       <div>
-        <label>Email</label>
+        <label>Email:</label>
         <input
           type="email"
           name="email"
+          placeholder="Email"
           value={email}
           onChange={handleChange}
+          className="border-b-2 border-gray-400 ml-2 hover:border-gray-500 m-3"
+
         />
         {errors.email && <p>{errors.email}</p>}
       </div>
       <div>
-        <label>Password</label>
+        <label>Password:</label>
         <input
           type="password"
           name="password"
           value={password}
+          placeholder="Password"
           onChange={handleChange}
+          className="border-b-2 border-gray-400 ml-2 hover:border-gray-500 m-3"
+
         />
         {errors.password && <p>{errors.password}</p>}
       </div>
-      <button type="submit">Submit</button>
+      <div>
+        <button type="submit"
+                      className="border-2 border-purple-300 rounded-lg flex justify-self-center p-2 bg-purple-100 hover:bg-purple-200 active:scale-95"
+                
+        >
+          Submit
+        </button>
+      </div>
       {submitted && <p>Form submitted successfully!</p>}
     </form>
   );

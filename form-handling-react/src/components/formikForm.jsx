@@ -21,43 +21,53 @@ function FormikForm() {
       validationSchema={validationSchema}
       onSubmit={(values) => {
         setSubmitted(true);
-        // Simulating form submission
         console.log("Form Submitted:", values);
       }}
     >
       {() => (
-        <Form>
-          <div>
-            <label>Username</label>
+        <Form className="rounded flex flex-col justify-self-center p-6 mt-4 bg-yellow-50 shadow-xl">
+          <div className=" ">
+            
+            <label className="">Username:</label>
             <Field
               type="text"
               name="username"
               placeholder="Username"
+              className=" border-b-2 border-gray-400 hover:border-gray-300 drop-shadow-black m-2"
             />
             <ErrorMessage name="username" component="p" />
           </div>
 
           <div>
-            <label>Email</label>
+            <label>Email:</label>
             <Field
               type="email"
               name="email"
               placeholder="Email"
+              className=" border-b-2 border-gray-400 hover:border-gray-300 drop-shadow-black m-2"
+              
             />
             <ErrorMessage name="email" component="p" />
           </div>
 
           <div>
-            <label>Password</label>
+            <label>Password:</label>
             <Field
               type="password"
               name="password"
               placeholder="Password"
+              className=" border-b-2 border-gray-400 hover:border-gray-300 drop-shadow-black m-2"
+
             />
             <ErrorMessage name="password" component="p" />
           </div>
-
-          <button type="submit">Submit</button>
+          <div >
+            <button type="submit" 
+                    className="border-2 border-blue-300 rounded-lg flex justify-self-center p-2 bg-blue-100 hover:bg-blue-200 active:scale-95"
+            >
+              Submit
+            </button>
+          </div>
 
           {submitted && <p>Form submitted successfully!</p>}
         </Form>
