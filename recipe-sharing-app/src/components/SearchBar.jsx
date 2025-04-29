@@ -13,6 +13,7 @@ const SearchBar = () => {
 
   return (
     <input
+      className='border p-1 pb-0 ml-10 rounded-lg flex justify-self-center'
       type="text"
       placeholder="Search recipes..."
       onChange={(e) => setSearchTerm(e.target.value)}

@@ -12,21 +12,31 @@ const EditRecipeForm = ({ recipe }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Title"
-        required
-      />
+    <form onSubmit={handleSubmit}
+          className='flex items-center m-5 gap-5'
+    >
+      <div className="">
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Title"
+          className='border rounded p-1 '
+          required
+        />
+      </div>
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
+        className='border rounded p-1 '
         required
       />
-      <button type="submit">Update Recipe</button>
+      <button type="submit"
+              className='border hover:bg-gray-200 p-1 rounded-md'
+      >
+        Update Recipe
+      </button>
     </form>
   );
 };

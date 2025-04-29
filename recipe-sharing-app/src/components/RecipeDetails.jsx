@@ -15,8 +15,11 @@ const RecipeDetails = () => {
 
   return (
     <div>
-      <h1>{recipe.title}</h1>
-      <p>{recipe.description}</p>
+      <div className="border-2 border-gray-400 rounded-xl m-4 p-2 bg-blue-100 flex flex-col gap-2 w-[50%] ">
+        <h1 className="text-xl ml-6 mt- font-bold"><span className="font-semibold">Title: </span>{recipe.title}</h1>
+        <p><span className="font-semibold">Description: </span>{recipe.description}</p>
+
+      </div>
       <EditRecipeForm recipe={recipe} />
       <DeleteRecipeButton recipeId={recipe.id} />
     </div>

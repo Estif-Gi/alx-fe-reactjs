@@ -13,7 +13,7 @@ const DeleteRecipeButton = ({ recipeId }) => {
   };
 
   return (
-    <button onClick={handleDelete} style={{ color: 'red' }}>
+    <button className="border bg-red-100 p-2 rounded-md m-5 absolute left-20 hover:bg-red-200"onClick={handleDelete} style={{ color: 'red' }}>
       Delete Recipe
     </button>
   );

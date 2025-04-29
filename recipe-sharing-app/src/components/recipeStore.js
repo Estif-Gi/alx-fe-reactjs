@@ -1,11 +1,18 @@
-import { create } from 'zustand';
+import { create  } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-let useRecipeStore = create((set) => ({
+let useRecipeStore = create(  
+  persist((set) => ({
   recipes: [],
   favorites: [], 
   recommendations: [],
   searchTerm: '',
   filteredRecipes: [],
+  setRandomRecommendation: () =>
+    set((state) => {
+      const randomIndex = Math.floor(Math.random() * state.recipes.length);
+      recommendations: [state.recipes[1].title] 
+    }),
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] 
     })),
@@ -45,6 +52,6 @@ let useRecipeStore = create((set) => ({
       })),
 
       setSearchTerm: (term) => set({ searchTerm: term }),
-}))
+})) , {name:"recipe-store"})
 
 export default useRecipeStore

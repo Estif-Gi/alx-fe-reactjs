@@ -48,7 +48,7 @@ function TodoList() {
           >
             {todo.text}
             <button onClick={(e) => {
-              e.stopPropagation(); // Prevents toggle when clicking delete
+              e.stopPropagation(); 
               deleteTodo(todo.id);
             }}>
               Delete
